@@ -1,0 +1,22 @@
+plugin.tx_envconf {
+	view {
+		# cat=envconf/view/b; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:envconf/Resources/Private/Templates/
+
+		# cat=envconf/view/c; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:envconf/Resources/Private/Partials/
+
+		# cat=envconf/view/d; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:envconf/Resources/Private/Layouts/
+	}
+
+	persistence {
+		# cat=envconf/persistence; type=integer; label=Storage PID of records
+		storagePid =
+	}
+	settings {
+		#cat=envconf/view/a type=string; label:Path to css file
+		cssFilePath = EXT:envconf/Resources/Public/Css/default.css
+	}
+
+}

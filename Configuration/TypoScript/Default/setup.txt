@@ -1,0 +1,67 @@
+
+
+config {
+  debug = 0
+  admPanel = 1
+
+  doctype = html5
+  metaCharset=utf-8
+
+  removeDefaultJS = external
+
+  index_enable = 1
+  index_externals = 1
+
+  # Anpassungen für die Extension realurl
+  tx_realurl_enable = 1
+  prefixLocalAnchors = all
+  baseURL = {$baseURL}
+
+  # 100 zeichen des Original Bildnamens anzeigen
+  meaningfulTempFilePrefix = 100
+  disablePrefixComment = 1
+  disableImgBorderAttr = 1
+
+  pageTitleFirst = 1
+
+  spamProtectEmailAddresses = 2
+
+  headerComment (
+   UMSETZUNG
+   hr-interactive
+   Ralf Schneider
+   www.hr-interactive.de
+  )
+
+  # Einstellungen zur Standardsprache
+  linkVars = L(int)
+  sys_language_uid = 0
+  language = de
+
+  locale_all = de_DE.UTF-8
+  sys_language_softMergeIfNotBlank = page:media
+  sys_language_mode = content_fallback
+
+  htmlTag_langKey = de
+  htmlTag_setParams = lang="de" xmlns="http://www.w3.org/1999/xhtml"
+
+  cache_period = 86400
+
+  #concatenateJs = 1
+  #compressJs = 1
+  #concatenateCss = 1
+  #compressCss = 1
+}
+[browser = msie] && [version  =< 6]
+config.doctypeSwitch = 1
+[global]
+
+[userFunc =  user_isDev]
+  config.debug = 1
+    # siehe auch http://typo3blog.at/blog/artikel/typo3-caching-grundlagen/
+    config.no_cache = 1
+    config.concatenateJs = 0
+    config.concatenateCss = 0
+    config.compressJs = 0
+    config.compressCss = 0
+[global]

@@ -1,0 +1,92 @@
+# UserTSconfig/Default.txt
+# included in all environments
+
+
+
+TCEMAIN {
+    # Owner be_groups UID for new pages:
+  	# permissions.groupid = 2
+  	table {
+		pages {
+	  		disablePrependAtCopy = 1
+	  		disableHideAtCopy = 1
+	  		doktype.removeItems = 255
+			layout.disabled = 0
+			lastUpdated.disabled = 1
+			author.disabled = 1
+			author_email.disabled = 1
+			no_cache.disabled = 0
+			cache_timeout.disabled = 0
+			php_tree_stop.disabled = 1
+			fe_group.disabled = 1
+			fe_login_mode.disabled = 1
+			alias.disabled = 1
+		}
+		tt_content {
+	  		disablePrependAtCopy = 1
+	  		disableHideAtCopy = 1
+		}
+  }
+}
+
+
+
+TCEFORM {
+	pages {
+		doktype.removeItems = 255
+		lastUpdated.disabled = 1
+		author.disabled = 1
+		author_email.disabled = 1
+		no_cache.disabled = 0
+		cache_timeout.disabled = 0
+		php_tree_stop.disabled = 1
+		fe_group.disabled = 1
+		fe_login_mode.disabled = 1
+		alias.disabled = 1
+		layout {
+			# layout field in table pages
+			# altLabels.0 = 2 columns (standard)
+			# altLabels.1 = 2 columns no subnavi
+			# altLabels.2 = 1 column
+			# altLabels.3 = Homepage
+		}
+		config {
+			diablePrefixComment = 1
+		}
+	}
+	tt_content {
+		layout {
+			# altLabels.0 = Default
+			# removeItems = 1,2,3
+			# addItems.101 = new 1
+			# addItems.102 = New 2
+			# addItems.103 = New 3
+			# addItems.104 = New 4
+		}
+		section_frame.disabled = 1
+		altText.disabled = 1
+		titleText.disabled = 1
+		longdescURL.disabled = 1
+	}
+}
+
+
+####################
+# RTE KONFIGURATION
+####################
+RTE.classes {
+  important {
+    name = important
+    value = color: #e17800;
+  }
+  quotation-giver {
+    name = quotation-giver
+    value = color: #222; font-style: italic;
+  }
+}
+RTE.default {
+  contentCSS = fileadmin/templates_fluid/less/css/RTE.css
+  buttons.textstyle.showTagFreeClasses = 1
+  buttons.textstyle.tags.span.allowedClasses = important, quotation-giver
+  proc.allowedClasses = important, quotation-giver
+}

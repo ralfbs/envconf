@@ -1,0 +1,12 @@
+plugin.tx_envconf {
+	view {
+		templateRootPath = {$plugin.tx_envconf.view.templateRootPath}
+		partialRootPath = {$plugin.tx_envconf.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_envconf.view.layoutRootPath}
+	}
+
+	persistence {
+		storagePid = {$plugin.tx_envconf.persistence.storagePid}
+	}
+}
+

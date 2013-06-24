@@ -1,0 +1,24 @@
+# UserTSconfig/Default.txt
+# included in all environments
+
+# Set default values for table "pages"
+TCAdefaults.pages {
+  # set default value for hidden-field
+  hidden=1
+  # set default value for page type
+  doktype=2
+}
+
+admPanel {
+  enable.preview = 1
+  enable.cache = 0
+  enable.publish = 0
+  enable.edit = 0
+  enable.tsdebug = 0
+  enable.info = 0
+}
+
+options {
+  clearCache.pages = 1
+  saveDocNew = 1
+}

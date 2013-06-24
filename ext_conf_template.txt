@@ -1,0 +1,5 @@
+# cat=envconf/basic/enable; type=boolean; label=Set PageTSconfig
+setPageTSconfig = 1
+
+# cat=envconf/basic/enable; type=boolean; label=Set UserTSconfig
+setUserTSconfig = 1

@@ -1,0 +1,6 @@
+
+config.debug = 0
+# siehe auch http://typo3blog.at/blog/artikel/typo3-caching-grundlagen/
+config.no_cache = 0
+
+
