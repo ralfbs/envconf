@@ -7,14 +7,14 @@
 .. Includes roles, substitutions, ...
 .. include:: _IncludedDirectives.rst
 
-=================
+==============
 Extension Name
-=================
+==============
 
-:Extension name: Switch config/settings by Environment (dev/stage/prod)
-:Extension key: envswitch
-:Version: 0.1
-:Description: manuals covering TYPO3 extension "Switch config/settings by Environment (dev/stage/prod)"
+:Extension name: Configuration & Setup by Environment (dev/stage/prod
+:Extension key: envconf
+:Version: 0.3
+:Description: manuals covering TYPO3 extension "Configuration & Setup by Environment (dev/stage/prod"
 :Language: en
 :Author: Ralf Schneider
 :Creation: 2013-06-09
@@ -44,9 +44,10 @@ The content of this document is related to TYPO3, a GNU/GPL CMS/Framework availa
 .. include:: ../Readme.rst
 
 What does it do?
-=================
+================
 
-In this chapter should be given a brief overview of the extension. What does it do? What problem does it solve? Who is interested in this? Basically, this section includes everything people need to know to decide whether they should go on with this extension.
+This extension allows to have different settings (TypoScript, Constants, PageTSconfig)
+depending on server or environment.
 
 .. figure:: Images/IntroductionPackage.png
 		:width: 500px

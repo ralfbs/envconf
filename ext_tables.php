@@ -6,23 +6,8 @@ if (!defined('TYPO3_MODE')) {
 $extPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY);
 require_once $extPath . '/Classes/Environment.php';
 
-/**
- * are we on a dev server? Global Funcion to be used in TypoScript Condition
- * @return boolean
- */
-function tx_envconf_isDev() {
-	return (Tx_Envconf_Environment::ENV_DEV == Tx_Envconf_Environment::getEnv());
-}
 
-/**
- * is this a stage server? Global Funcion to be used in TypoScript Condition
- * @return boolean
- */
-function tx_envconf_isStage() {
-	return (Tx_Envconf_Environment::ENV_STAGE == Tx_Envconf_Environment::getEnv());
-}
-
-if (tx_envconf_isDev()) {
+if (Tx_Envconf_Environment::isDev()) {
 
 	// debug for development
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = '1';
@@ -39,7 +24,7 @@ if (tx_envconf_isDev()) {
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_errorDLOG'] = '1';
 	$GLOBALS['TYPO3_CONF_VARS']['SYS']['enable_exceptionDLOG'] = '1';
 
-} elseif (tx_envconf_isStage) {
+} elseif (Tx_Envconf_Environment::isStage()) {
 
 } else {
 
