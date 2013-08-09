@@ -76,6 +76,7 @@ class Tx_Envconf_Environment {
 			return self::ENV_STAGE;
 		}
 		return self::ENV_PRODUCTION;
+
 	}
 
 	/**

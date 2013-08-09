@@ -3,3 +3,6 @@ setPageTSconfig = 1
 
 # cat=envconf/basic/enable; type=boolean; label=Set UserTSconfig
 setUserTSconfig = 1
+
+# cat=envconf/basic/enable; type=boolean; label=Use Memcached in production environment?
+useMemcached = 1

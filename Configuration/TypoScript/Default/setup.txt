@@ -65,3 +65,23 @@ config.doctypeSwitch = 1
     config.compressJs = 0
     config.compressCss = 0
 [global]
+
+
+# Default PAGE object:
+page = PAGE
+page {
+  typeNum = 0
+
+  meta {
+    description {
+      data = TSFE:page|description
+    }
+    viewport = initial-scale=1.0, maximum-scale=1.0, width=device-width
+  }
+  keywords {
+  data = TSFE:page|keywords
+    keywords = 1
+  }
+
+  shortcutIcon = favicon.ico
+}

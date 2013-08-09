@@ -27,7 +27,24 @@ if (Tx_Envconf_Environment::isDev()) {
 } elseif (Tx_Envconf_Environment::isStage()) {
 
 } else {
+	if ($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['useMemcached']) {
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['useCachingFramework'] = '1';
 
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_pages']['backend'] = 't3lib_cache_backend_MemcachedBackend';
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_pages']['options'] = array(
+		'servers' => array('localhost:11211'),
+		);
+
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_pagesection']['backend'] = 't3lib_cache_backend_MemcachedBackend';
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_pagesection']['options'] = array(
+		'servers' => array('localhost:11211'),
+		);
+
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_hash']['backend'] = 't3lib_cache_backend_MemcachedBackend';
+		$GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['cache_hash']['options'] = array(
+		'servers' => array('localhost:11211'),
+		);
+	}
 }
 
 if ($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['setPageTSconfig']) {
@@ -40,8 +57,9 @@ if ($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['setUserTSconfig']) 
 
 $envFolder = ucfirst(Tx_Envconf_Environment::getEnv());
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/Default', "EnvConf Basis-TypoScript");
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/_Config', "EnvConf Admin Settings");
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, "Configuration/TypoScript/{$envFolder}", "Config & Setup for {$envFolder}-Environment");
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, "Configuration/TypoScript/{$envFolder}", "Additinal TypoScript {$envFolder}-Environment");
 
 
 ?>
