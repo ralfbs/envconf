@@ -63,7 +63,20 @@ TCEFORM {
 			# addItems.103 = New 3
 			# addItems.104 = New 4
 		}
-		section_frame.disabled = 1
+		section_frame {
+			disabled = 1
+			# removeItems = 1,2,3
+			# altLabels.0 = Default
+			# altLabels.1 = Invisible
+			# altLabels.5 = Ruler Before
+			# altLabels.6 = Ruler After
+			# altLabels.10 = Indent
+			# altLabels.11 = Indent, 33/66%
+			# altLabels.12 = Indent, 66/33%
+			# altLabels.20 = Frame 1
+			# altLabels.21 = Frame 2
+			# altLabels.66 = No Frame
+		}
 		altText.disabled = 1
 		titleText.disabled = 1
 		longdescURL.disabled = 1
